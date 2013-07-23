@@ -1,4 +1,11 @@
 FrugalInsults::Application.routes.draw do
+  get "insults/generate"
+  get "insults/upvote"
+  get "insults/downvote"
+  resources :mean_adjectives, only: [:new, :create, :destroy, :index]
+  resources :crude_nouns, only: [:new, :create, :destroy, :index]
+  resources :random_nouns, only: [:new, :create, :destroy, :index]
+  get "word/admin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

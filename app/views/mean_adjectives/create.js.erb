@@ -1,0 +1,2 @@
+$('#mean_adjective_list').append("<li id=\"ma_<%= @mean_adjective.id %>\"><%= @mean_adjective.word %> <a rel=\"nofollow\" href=\"/mean_adjectives/<%= @mean_adjective.id %>\" data-remote=\"true\" data-method=\"delete\">delete</a></li>");
+$('#status_message').html("<%= @mean_adjective.word %> successfully added!");

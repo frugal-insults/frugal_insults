@@ -1,0 +1,2 @@
+module CrudeNounsHelper
+end

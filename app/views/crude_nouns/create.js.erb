@@ -1,0 +1,2 @@
+$('#crude_noun_list').append("<li id=\"cn_<%= @crude_noun.id %>\"><%= @crude_noun.word %> <a rel=\"nofollow\" href=\"/crude_nouns/<%= @crude_noun.id %>\" data-remote=\"true\" data-method=\"delete\">delete</a></li>");
+$('#status_message').html("<%= @crude_noun.word %> successfully added!");

@@ -1,0 +1,2 @@
+$('#random_noun_list').append("<li id=\"rn_<%= @random_noun.id %>\"><%= @random_noun.word %> <a rel=\"nofollow\" href=\"/random_nouns/<%= @random_noun.id %>\" data-remote=\"true\" data-method=\"delete\">delete</a></li>");
+$('#status_message').html("<%= @random_noun.word %> successfully added!");

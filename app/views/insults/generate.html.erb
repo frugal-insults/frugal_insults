@@ -1,0 +1,12 @@
+<div class="row">
+  <div id="insult_container" class="span11 offset1">
+    <%= render partial: 'insults/insult' %>
+  </div>
+</div>
+<div class="row">
+  <div class="insult-form-container span11 offset1">
+    <%= form_tag('/insults/generate', method: :get, remote: true) do %>
+      <%= submit_tag "Generate new insult!", id: 'generate_button', class: "btn btn-inverse" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div id="status_message" class="status clear">
+</div>
+
+<div id="mean_adjectives_container" class="column">
+  <%= render partial: 'mean_adjectives/mean_adjective_form', locals: {is_remote: true} %>
+  <ul id="mean_adjective_list">
+    <% for @current_mean_adjective in @mean_adjectives %>
+      <li id="ma_<%= @current_mean_adjective.id %>">
+        <%= @current_mean_adjective.word %> 
+        <%= link_to 'delete', @current_mean_adjective, method: :delete, remote: true %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="crude_nouns_container" class="column">
+  <%= render partial: 'crude_nouns/crude_noun_form', locals: {is_remote: true} %>
+  <ul id="crude_noun_list">
+    <% for @current_crude_noun in @crude_nouns %>
+      <li id="cn_<%= @current_crude_noun.id %>">
+        <%= @current_crude_noun.word %>
+        <%= link_to 'delete', @current_crude_noun, method: :delete, remote: true %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="random_nouns_container" class="column">
+  <%= render partial: 'random_nouns/random_noun_form', locals: {is_remote: true} %>
+  <ul id="random_noun_list">
+    <% for @current_random_noun in @random_nouns %>
+      <li id="rn_<%= @current_random_noun.id %>">
+        <%= @current_random_noun.word %>
+        <%= link_to 'delete', @current_random_noun, method: :delete, remote: true %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="clear"></div>

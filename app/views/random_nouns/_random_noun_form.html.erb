@@ -1,0 +1,5 @@
+<% is_remote = false if local_assigns[:is_remote].nil? %>
+<%= form_for @random_noun, remote: is_remote do |f| %>
+  <%= f.text_field :word %>
+  <%= f.submit "Submit Random Noun" %>
+<% end %>
