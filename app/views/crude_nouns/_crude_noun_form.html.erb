@@ -1,5 +1,5 @@
 <% is_remote = false if local_assigns[:is_remote].nil? %>
 <%= form_for @crude_noun, remote: is_remote do |f| %>
   <%= f.text_field :word %>
-  <%= f.submit "Submit Crude Noun" %>
+  <%= f.submit "Submit Crude Noun", class: "btn btn-inverse" %>
 <% end %>

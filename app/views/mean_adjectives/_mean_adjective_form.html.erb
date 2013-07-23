@@ -1,5 +1,5 @@
 <% is_remote = false if local_assigns[:is_remote].nil? %>
 <%= form_for @mean_adjective, remote: is_remote do |f| %>
   <%= f.text_field :word %>
-  <%= f.submit "Submit Mean Adjective" %>
+  <%= f.submit "Submit Mean Adjective", class: "btn btn-inverse" %>
 <% end %>
