@@ -1,4 +1,6 @@
 FrugalInsults::Application.routes.draw do
+  # Must have a root route to make devise happy
+  root :to => 'insults#generate'
   get "insults/generate"
   get "insults/upvote"
   get "insults/downvote"

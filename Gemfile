@@ -15,6 +15,8 @@ group :libv8 do
 	gem 'libv8', "~> 3.11.8"
 end
 
+gem 'devise', '3.0.0rc'
+
 # Use sqlite3 as the database for Active Record
 group :development do 
   gem 'sqlite3', '1.3.7'
