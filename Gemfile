@@ -16,6 +16,7 @@ group :libv8 do
 end
 
 gem 'devise', '3.0.0rc'
+gem 'figaro', '0.7.0'
 
 # Use sqlite3 as the database for Active Record
 group :development do 
