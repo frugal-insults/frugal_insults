@@ -1,7 +1,7 @@
 FrugalInsults::Application.routes.draw do
   devise_for :users
   # Must have a root route to make devise happy
-  root :to => 'words#admin'
+  root :to => 'word#admin'
   #root :to => 'insults#generate'
   get "insults/generate"
   get "insults/upvote"
