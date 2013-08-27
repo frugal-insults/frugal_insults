@@ -1,8 +1,8 @@
 FrugalInsults::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :sign_out_via => [ :get, :delete ] #TODO: once done with testing, get rid of the :get
   # Must have a root route to make devise happy
-  root :to => 'word#admin'
-  #root :to => 'insults#generate'
+  #root :to => 'word#admin'
+  root :to => 'insults#generate'
   get "insults/generate"
   get "insults/upvote"
   get "insults/downvote"
@@ -10,6 +10,8 @@ FrugalInsults::Application.routes.draw do
   resources :crude_nouns, only: [:new, :create, :destroy, :index]
   resources :random_nouns, only: [:new, :create, :destroy, :index]
   get "word/admin"
+  get "home", to: 'user#home', as: :user_home
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
