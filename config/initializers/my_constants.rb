@@ -1,0 +1,5 @@
+# word label constants
+WORD_CATEGORY_LABELS = Hash.new
+WORD_CATEGORY_LABELS[:MEAN_ADJECTIVE] = "Mean Adjective"
+WORD_CATEGORY_LABELS[:CRUDE_NOUN] = "Crude Noun"
+WORD_CATEGORY_LABELS[:RANDOM_NOUN] = "Random Noun"

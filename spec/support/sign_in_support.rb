@@ -5,6 +5,6 @@ module ValidUserHelper
   end
 end
 
-Rspec.configure do |config|
+RSpec.configure do |config|
   config.include ValidUserHelper, :type => :controller
 end

@@ -4,7 +4,8 @@ module ActiveRecordExtension
   module ClassMethods
     def random
       if (c = count) != 0
-        find(:first, :offset => rand(c) )
+        first( :offset => rand(c) )
+        #find(:first, :offset => rand(c) )
       end
     end
   end

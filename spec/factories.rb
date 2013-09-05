@@ -12,4 +12,11 @@ FactoryGirl.define do
     word_category_id 1
     user_id 1
   end
+
+  factory :reduntant_word do
+    word "test_word"
+    score 1000
+    word_category_id 1
+    user_id 1
+  end
 end
