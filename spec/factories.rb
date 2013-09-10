@@ -19,4 +19,16 @@ FactoryGirl.define do
     word_category_id 1
     user_id 1
   end
+
+  factory :mean_adjective_word_category, class: WordCategory do
+    category "Mean Adjective"
+  end
+
+  factory :crude_noun_word_category, class: WordCategory do
+    category "Crude Noun"
+  end
+
+  factory :random_noun_word_category, class: WordCategory do
+    category "Random Noun"
+  end
 end

@@ -9,6 +9,7 @@ FrugalInsults::Application.routes.draw do
   resources :mean_adjectives, only: [:new, :create, :destroy, :index]
   resources :crude_nouns, only: [:new, :create, :destroy, :index]
   resources :random_nouns, only: [:new, :create, :destroy, :index]
+  resources :words, only: [:create, :destroy]
   get "word/admin"
   get "home", to: 'user#home', as: :user_home
 

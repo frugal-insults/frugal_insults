@@ -1,0 +1,8 @@
+<% if local_assigns.has_key? :word_category and local_assigns[:word_category].instance_of? WordCategory %>
+  <% is_remote = false if local_assigns[:is_remote].nil? %>
+  <%= form_for @word, remote: is_remote do |f| %>
+    <%= f.text_field :word %>
+    <%= f.hidden_field :word_category, value: word_category.id %>
+    <%= f.submit "Add #{word_category.category}", class: "btn btn-inverse" %>
+  <% end %>
+<% end %>

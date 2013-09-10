@@ -33,4 +33,20 @@ FrugalInsults::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Email config, attempting to get RSpec testing working for Devise confirmable users
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "matrisking.com",
+    :authentication => :login,
+    :user_name => ENV['GMAIL_USERNAME'],
+    :password => ENV['GMAIL_PASSWORD']
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'no-reply@frugalinsults.com'}
+  config.action_mailer.default_url_options = { :host => 'localhost:80' }
 end

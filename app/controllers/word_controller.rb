@@ -1,4 +1,8 @@
 class WordController < ApplicationController
+  def create
+    @word = Word.create!(word_params)
+  end
+
   def admin
     @mean_adjectives = MeanAdjective.all
     @crude_nouns = CrudeNoun.all
