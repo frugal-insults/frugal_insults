@@ -35,5 +35,26 @@ describe "User pages -" do
     it { should have_selector('div#added-mean-adjectives-container', text: 'Mean Adjectives') }
     it { should have_selector('div#added-crude-nouns-container', text: 'Crude Nouns') }
     it { should have_selector('div#added-random-nouns-container', text: 'Random Nouns') }
+
+    context "when submitting a valid mean adjective" do
+      before do
+        fill_in "word_for_word_category_id_#{mean_adjective_category.id}", with: "Test-Adjective"
+        click_button "Add Mean Adjective"
+      end
+     
+      it do  
+        puts response.body
+        1.should eq(1)
+      end
+      it { should have_content('Test-Adjective successfully added to the mean adjective list') }
+      it { should have_selector('li', text: 'Test-Adjective') }
+      pending 'controller create action when not logged in (belongs in unit tests, not integration'
+
+      context "when submitting a redundant adjective" do
+        it { should have_content("'Test-Adjective' has already been submitted.") }
+        pending "it should ensure that a second entry has not been added to the container"
+      end
+    end
   end
+
 end

@@ -1,0 +1,12 @@
+<% if local_assigns.has_key? :word_list and not word_list.nil? %>
+  <div id="added-<%word_list.first.word_category.lowercase_hyphenated_label%>-container">
+    <h3><%= "#{word_list.first.category_label}s" %></h3>
+    <ul class=<%"#{word_list.first.word_category.lowercase_hyphenated_label}-list"%>>
+    <% word_list.each do |current_word| %>
+      <% if not current_word.word.empty? %>
+        <li><%= current_word.word %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

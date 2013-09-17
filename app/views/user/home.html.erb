@@ -12,27 +12,31 @@
     <h2>Add Words</h2>
     <div class="row">
       <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: true, word_category: @mean_adjective_category} %>
+        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @mean_adjective_category} %>
       </div>
       <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: true, word_category: @crude_noun_category} %>
+        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @crude_noun_category} %>
       </div>
       <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: true, word_category: @random_noun_category} %>
+        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @random_noun_category} %>
       </div>
     </div>
   </div>
   <div id="previously-added-words-container">
     <h2>Previously Added Words</h2>
 
-    <div id="added-mean-adjectives-container">
-      <h3>Mean Adjectives</h3>
-    </div>
-    <div id="added-crude-nouns-container">
-      <h3>Crude Nouns</h3>
-    </div>
-    <div id="added-random-nouns-container">
-      <h3>Random Nouns</h3>
+    <div class="row">
+      <div class="span2 offset1">
+        <%= render partial: 'word/word_list', locals: {word_list: @mean_adjectives} %>
+      </div>
+
+      <div class="span2 offset2">
+        <%= render partial: 'word/word_list', locals: {word_list: @crude_nouns} %>
+      </div>
+
+      <div class="span2 offset2">
+        <%= render partial: 'word/word_list', locals: {word_list: @random_nouns} %>
+      </div>
     </div>
   </div>
 
