@@ -42,10 +42,6 @@ describe "User pages -" do
         click_button "Add Mean Adjective"
       end
      
-      it do  
-        puts response.body
-        1.should eq(1)
-      end
       it { should have_content('Test-Adjective successfully added to the mean adjective list') }
       it { should have_selector('li', text: 'Test-Adjective') }
       pending 'controller create action when not logged in (belongs in unit tests, not integration'

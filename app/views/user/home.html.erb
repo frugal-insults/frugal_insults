@@ -11,14 +11,14 @@
   <div id="add-words-container">
     <h2>Add Words</h2>
     <div class="row">
-      <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @mean_adjective_category} %>
+      <div class="span2 offset1" id="<%= @mean_adjective_category %>s-form-container">
+        <%= render partial: 'words/word_form', locals: {is_remote: true, word_category: @mean_adjective_category} %>
       </div>
-      <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @crude_noun_category} %>
+      <div class="span2 offset2" id="<%= @crude_noun_category %>s-form-container">
+        <%= render partial: 'words/word_form', locals: {is_remote: true, word_category: @crude_noun_category} %>
       </div>
-      <div class="span2 offset2">
-        <%= render partial: 'word/word_form', locals: {is_remote: false, word_category: @random_noun_category} %>
+      <div class="span2 offset2" id="<%= @random_noun_category %>s-form-container">
+        <%= render partial: 'words/word_form', locals: {is_remote: true, word_category: @random_noun_category} %>
       </div>
     </div>
   </div>
@@ -26,16 +26,16 @@
     <h2>Previously Added Words</h2>
 
     <div class="row">
-      <div class="span2 offset1">
-        <%= render partial: 'word/word_list', locals: {word_list: @mean_adjectives} %>
+      <div class="span2 offset1" id="added-<%= @mean_adjective_category %>s-container">
+        <%= render partial: 'words/word_list', locals: {word_list: @mean_adjectives} %>
       </div>
 
-      <div class="span2 offset2">
-        <%= render partial: 'word/word_list', locals: {word_list: @crude_nouns} %>
+      <div class="span2 offset2" id="added-<%= @crude_noun_category %>s-container">
+        <%= render partial: 'words/word_list', locals: {word_list: @crude_nouns} %>
       </div>
 
-      <div class="span2 offset2">
-        <%= render partial: 'word/word_list', locals: {word_list: @random_nouns} %>
+      <div class="span2 offset2" id="added-<%= @random_noun_category %>s-container">
+        <%= render partial: 'words/word_list', locals: {word_list: @random_nouns} %>
       </div>
     </div>
   </div>

@@ -1,0 +1,11 @@
+// Render HTML for the appropriate list
+// Replace the appropriate container's HTML with the rendered HTML
+$("#added-<%= @word_category %>s-container").html("<%= escape_javascript(render partial: 'words/word_list', locals: {word_list: @word_list}) %>");
+
+// Display a status message (TODO)
+
+// Re-enable the button
+$("#submit-new-#{<%= @word_category %>}").attr("disabled", false);
+
+// Empty the text field
+$("#new-<%= @word_category %>-word").val('');

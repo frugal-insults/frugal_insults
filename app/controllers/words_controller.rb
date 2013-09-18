@@ -1,17 +1,24 @@
 class WordsController < ApplicationController
   def create
     @word = Word.new(word_params)
-    #if Word.where(word: @word.word).to_a.empty?
       @word.user_id = current_user.id
       @word.score = 1000
     
       if @word.save
-        flash[:success] = "#{@word.word} successfully added to the #{@word.word_category.category} list."
+        @message = flash[:success] = "#{@word.word} successfully added to the #{@word.word_category.category} list."
       else
-        flash[:error] = "There was an error saving your word"
+        @message = flash[:error] = "There was an error saving your word"
       end
-    #end
-    redirect_to user_home_path
+
+      if request.xhr?
+        @word_category = @word.word_category
+        @word_list = Word.find_user_words_by_category(current_user, @word_category)
+      end
+
+      respond_to do |format|
+        format.html { redirect_to user_home_path }
+        format.js
+      end
   end
 
   def admin
